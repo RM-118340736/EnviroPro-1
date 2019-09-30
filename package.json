@@ -1,0 +1,22 @@
+{
+  "name": "enviro",
+  "version": "1.0.0",
+  "description": "Eviromental Volunteering App",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuperOmario/EnviroPro.git"
+  },
+  "author": "Omar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuperOmario/EnviroPro/issues"
+  },
+  "homepage": "https://github.com/SuperOmario/EnviroPro#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
