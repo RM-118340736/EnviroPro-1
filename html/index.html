@@ -4,94 +4,77 @@
     <meta charset='utf-8' />
     <title>Enviro</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
-    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
-    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css' type='text/css' />
+    
     <style>
-        body {
-          margin: 0;
-          padding: 0;
-        }
+        
+ body, html {
+     
+     height: 100%;
+     margin: 0;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size:48px;
+}
 
-        #map {
-          position: absolute;
-          top: 100px;
-          bottom:0 ;
-          left: 0;
-          right:0;
-          width: 100%;
-        }
-       
-        .center {
-            margin-top: 7px ;
-        }
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("homepage.jpeg");
+
+  /* Set a specific height */
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom:0;
+  right:0;
+  left:0;
+ 
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}     
+.hero-text button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  border-radius: 20px;
+  padding: 20px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.hero-text button:hover {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
     </style>
     
 </head>
 <body>
-
-  <div id='map'></div>
-  <center><img src="clipart-earth-pdf.png" alt="" class="center" width ="85" height="85" /></center>
-  
-<script>
     
-  mapboxgl.accessToken = 'pk.eyJ1Ijoic3VwZXJvbWFyaW8iLCJhIjoiY2p3NnExOW80MWVtcDRhbzZnNm9xaXpsMiJ9.L7je2_X-JmFNb7yhIznQMg';
-  var map = new mapboxgl.Map({
-    container: 'map', // Container ID
-    style: 'mapbox://styles/mapbox/streets-v11', // Map style to use
-    center: [-8.468399, 51.8985], // Starting position [lng, lat]
-    zoom: 12 // Starting zoom level
-  });
-
-  var marker = new mapboxgl.Marker() // Initialize a new marker
-    .setLngLat([-8.468399, 51.8985]) // Marker [lng, lat] coordinates
-    .addTo(map); // Add the marker to the map
-
-  var geocoder = new MapboxGeocoder({ // Initialize the geocoder
-    accessToken: mapboxgl.accessToken, // Set the access token
-    mapboxgl: mapboxgl, // Set the mapbox-gl instance
-    marker: false, // Do not use the default marker style
-    placeholder: 'Search for places in Cork', // Placeholder text for the search bar
-    bbox: [51.8921, -8.4933, 51.16143, -7.309], // Boundary for Cork
-    proximity: {
-      longitude: 51.8921,
-      latitude: -8.4933
-    } // Coordinates of Cork
-  });
-
-  // Add the geocoder to the map
-  map.addControl(geocoder);
-
-  // After the map style has loaded on the page,
-  // add a source layer and default styling for a single point
-  map.on('load', function() {
-    map.addSource('single-point', {
-      type: 'geojson',
-      data: {
-        type: 'FeatureCollection',
-        features: []
-      }
-    });
-
-    map.addLayer({
-      id: 'point',
-      source: 'single-point',
-      type: 'circle',
-      paint: {
-        'circle-radius': 10,
-        'circle-color': '#448ee4'
-      }
-    });
-
-    // Listen for the `result` event from the Geocoder
-    // `result` event is triggered when a user makes a selection
-    // Add a marker at the result's coordinates
-    geocoder.on('result', function(ev) {
-      map.getSource('single-point').setData(ev.result.geometry);
-    });
-  });
-</script>
-
+ <div class="hero-image">
+  <div class="hero-text">
+    <h1>Eco-Vo</h1>
+    <a href="http://localhost:8383/EnviroPro-master%202/html/geocoder.html" ><button>Get started</button> </a>
+  </div>
+ </div>
+    
 </body>
 </html>
