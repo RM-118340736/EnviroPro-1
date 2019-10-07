@@ -15,7 +15,7 @@
         body {
           margin: 0;
           padding: 0;
-          background-color:#99d6ff;
+          background-color:#80ccff;
           
         }
 
@@ -34,19 +34,42 @@
 
         #btnevent {
           position: absolute;
-          top: 90%;
-          left: 47%;
+          top: 85%;
+          left: 39%;
+          background-color: #80ccff; /* Green */
+          border: none;
+          color: white;
+          border-radius: 20px;
+          padding: 20px 70px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 24px;
+          margin: 4px 2px;
+          cursor: pointer;
         }
+        #btnevent:hover {
+           background-color: white; 
+           color:#80ccff; 
+           border: 2px solid #80ccff;  
+        }
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:58px;
+            margin-top:40px;
+            color:white;
+        }
+ 
     </style>
     
 </head>
 <body>
     
-  <center><img src="blue world png.png" alt="" class="center" width = "100" height="100" /></center>
+<center><h1>Eco-Vo</h1></center>
    
   <div id='map'></div>
   <!--This button will take you to the event that you have selected-->
-  <button id='btnevent'>Click Here</button>
+  <a href="./event.html "> <button id='btnevent'>Confirm Location</button></a>
   <script src="../javascript/index.js"></script>
 
 </body>
