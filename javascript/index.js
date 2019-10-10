@@ -14,7 +14,7 @@ var geocoder = new MapboxGeocoder({ // Initialize the geocoder
   accessToken: mapboxgl.accessToken, // Set the access token
   mapboxgl: mapboxgl, // Set the mapbox-gl instance
   marker: false, // Do not use the default marker style
-  placeholder: 'Search for places in Cork', // Placeholder text for the search bar
+  placeholder: 'Search for places in Ireland', // Placeholder text for the search bar
   bbox: [-10.953372631330552,51.41797070026601,-5.667712546362168,53.15797863607713], // Boundary for Cork
   proximity: {
     longitude: 51.8921,
@@ -61,7 +61,15 @@ map.addControl(new mapboxgl.GeolocateControl({
     trackUserLocation: true
 }));
 
+// Get the modal
+var modal = document.getElementById('id01');
 
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
   
 
