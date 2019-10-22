@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>Create or Join an Event</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+<style>
+body { 
+   background-color:#80ccff; 
+}
+#map { 
+    position:absolute;
+    top:0; 
+    left:0;
+    bottom:0; 
+    width:50%; 
+}
+.square {
+  height: 1000px;
+  width: 50px;
+  background-color: white;
+  margin-left:50%;
+}
+.circle {
+    height:260px;
+    width:260px;
+    background-color:white;
+    border-radius:50%;
+    margin-top:100px;
+    margin-left: 950px;
+    position:relative;
+} 
+    
+.circle:hover {
+    border: 2px solid #008ae6;    
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #008ae6;
+    font-size: 16px;
+    max-width:150px;
+}
+</style>
+</head>
+<body>
+    
+    <div class="circle">
+        <center>
+            <img style="margin-top:70px;" src="newavatar.png" alt="" height="65" width="65"/>
+            <h1>Join an existing event in your Area</h1>
+        </center>
+        
+    </div>
+    <div class="circle">
+        <center>
+            <img style="margin-top:70px; " src="plus.png" alt="" height="60" width="60"/>
+            <h1>Add a New Event in your Area</h1>
+        </center>
+    </div>
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3VwZXJvbWFyaW8iLCJhIjoiY2p3NnExOW80MWVtcDRhbzZnNm9xaXpsMiJ9.L7je2_X-JmFNb7yhIznQMg';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [-74.50, 40],
+zoom: 9,
+// causes pan & zoom handlers not to be applied, similar to
+// .dragging.disable() and other handler .disable() funtions in Leaflet.
+interactive: false
+});
+</script>
+<div class="square">
+    
+</div>
+ 
+</body>
+</html>
+
